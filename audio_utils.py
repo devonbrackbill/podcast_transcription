@@ -4,6 +4,7 @@ import json
 import feedparser
 import subprocess
 import replicate
+import os
 
 def convert_m4a_to_wav(m4a_file: str, wav_file: str) -> None:
     '''Converts m4a to wav'''
@@ -74,6 +75,9 @@ def podcast_to_transcript(
         return(False)
     else:
         print('Podcast found: {}'.format(podcast_url))
+    
+    # make /res directory if it doesn't exist
+    os.makedirs('res/', exist_ok=True)
     
     print('Downloading podcast...')
     if 'mp3' in podcast_url:

@@ -1,0 +1,6 @@
+__pycache__/*
+res/*
+venv/*
+.DS_Store
+*.dtmp
+*.drawio
